@@ -3,84 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
     <div class="container">
         <div class="row">
-            <form>
-                <div class="form-row" id="form">
-
-                        <select class="col-sm-3 form-control form-control-sm firstInput " id="firstInput" onchange="check()"></select>
-                        <select class="col-sm-3 form-control form-control-sm" id="secondInput"></select>
-                        <input type="text" class="col-sm-3 form-control" id="contFilter">
-                        <button type="button" class=" col-sm-3 btn btn-link" id="hid"  style="display: none">X</button>
-                    <button type="button" class=" col-sm-12 btn btn-link" onclick="addFilter()">+ Add condition</button>
-                    <hr align="center" width="100%" size="3" color="grey" />
-
-                    <button type="button" class="btn btn-outline-primary" onclick="stat()">Apply</button>
-                    <button type="button" class="btn btn-outline-secondary" onclick="def()">Clear filter</button>
-
-
-                </div>
+            <form action="" class=" col-sm-12 default " >
+                <select name="" class="col-sm-3"></select>
+                <select name="" class="col-sm-3"></select>
+                <input type="text" class="col-sm-3">
             </form>
+            <button type="button" class="btn btn-link">+ Add condition</button>
+            <hr >
+            <button type="button" class="btn btn-primary">Apply</button>
+            <button type="button" class="btn btn-light">Clear filter</button>
+
 
         </div>
+
     </div>
 <script>
-  /*  function bind(method,context) {
-        var args = Array.prototype.slice.call(arguments,2);
-        console.log(args );
-        return function () {
-            var a = args.concat(Array.prototype.slice.call(arguments,0));
-            console.log(a);
-            return method.apply(context,a);
-
-        }
-    }
-
-
-    function returnFoo () {
-
-        return this[1];
-    }
-    var con = [1,2,3];
-    var context = {
-        foo: "bar",
-        foo1: "bar1",
-        foo2: "bar2"
-    };
-    var sum = function(a, b) {
-        return this.sum + a + b;
-    };
-
-    var res = bind(sum, {sum: 15}, 20, 30,100);
-
-    console.log(res(40, 50, 70));*/
-
- /* function inArray(term,box) {
-      for (var i = 0; i < box.length; i++) {
-          if (box[i] === term) {
-              return true;
-          }
-      }
-      return false;
-  };
-  var term = 89;
-  var box = [1,5,8,78];
-  Array.prototype.myMethod = function(term)
-  { for (var i = 0; i < box.length; i++) {
-      if (box[i] === term) {
-          return true;
-      }
-  }
-      return false;
-
-
-  };
-  var s =box.myMethod(term);
-console.log(s);*/
 
 </script>
 <script src="app.js"></script>
