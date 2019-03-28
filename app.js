@@ -9,7 +9,9 @@ $(document).ready(function () {
     $.each(optionInputText, function(key, value) {
         $('#secondInput').append('<option value="' + value + '">' + value + '</option>');
     });
+    $("#x").hide();
     $(function() {
+
         $('#firstInput').on('change', function() {
           switch (this.value) {
               case "Text field":
@@ -32,6 +34,7 @@ $(document).ready(function () {
                   });
                   break;
               case  "Number field":
+
                   $('#secondInput > option').remove();
                   $('#filterValue').attr({type:'number'});
                   $.each(optionInputNumber, function(key, value) {
@@ -41,5 +44,12 @@ $(document).ready(function () {
 
         })
     });
+    $('#add').on('click',function () {
+        $("#x").show();
+        $("#firstInput").clone().appendTo("#filter" );
+        $("#secondInput").clone().appendTo("#filter" );
+        $("#filterValue").clone().appendTo("#filter" );
+        $("#x").clone().appendTo("#filter" );
+    })
 
 });
