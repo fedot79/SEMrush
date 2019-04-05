@@ -44,12 +44,16 @@ $(document).ready(function () {
 
         })
     });
+    var countFields = 0;
     $('#add').on('click',function () {
+       countFields++;
         $("#x").show();
-        $("#firstInput").clone().appendTo("#filter" );
-        $("#secondInput").clone().appendTo("#filter" );
-        $("#filterValue").clone().appendTo("#filter" );
+        $("#firstInput",).clone(true).attr('id','firstInput'+ countFields).appendTo("#filter" );
+        $("#secondInput").clone(true).attr('id','secondInput'+ countFields).appendTo("#filter" );
+        $("#filterValue").clone(true).attr('id','filterValue'+ countFields).appendTo("#filter" );
+
         $("#x").clone().appendTo("#filter" );
+
     })
 
 });
