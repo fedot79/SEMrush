@@ -44,17 +44,48 @@ $(document).ready(function () {
 
         })
     });
-    var countFields = 0;
-    $('#add').on('click',function () {
-       countFields++;
-        $("#x").show();
-        $("#firstInput",).clone(true).attr('id','firstInput'+ countFields).appendTo("#filter" );
-        $("#secondInput").clone(true).attr('id','secondInput'+ countFields).css({'margin-left':'4px'}).appendTo("#filter" );
-        $("#filterValue").clone(true).attr('id','filterValue'+ countFields).css({'margin-left':'4px'}).appendTo("#filter" );
 
-        $("#x").clone().css({'margin-left':'4px'}).appendTo("#filter" );
-        
-    });
+        var countFields = 0;
+
+            $('#add').on('click', function () {
+                countFields++;
+                $("#x").show();
+                $("#firstInput",).clone(true).attr({
+                    'id': 'firstInput' + countFields,
+                    'name': countFields
+                }).appendTo("#filter");
+                $("#secondInput").clone(true).attr({
+                    'id': 'secondInput' + countFields,
+                    'name': countFields
+                }).css({'margin-left': '4px'}).appendTo("#filter");
+                $("#filterValue").clone(true).attr({
+                    'id': 'filterValue' + countFields,
+                    'name': countFields
+                }).css({'margin-left': '4px'}).appendTo("#filter");
+
+                // $("#x").clone().attr({'id':'x'+ countFields,'name':countFields}).css({'margin-left':'4px'}).appendTo("#filter" );
+                $("<button>X</button>").attr({
+                    'id': 'x' + countFields,
+                    'name': countFields,
+                    'class': 'btn btn-link del',
+                    'type': 'button'
+                }).css({'margin-left': '5px'}).appendTo("#filter");
+                $("#x" + countFields).click(function () {
+                    var arrChkBox = document.getElementsByName(this.name);
+                    $(arrChkBox).remove();
+
+                });
+                if (countFields==8){
+                    $('#add').on('click', function () {
+                        $("<p>Больше полей добавлять нельзя</p>").css({'color': 'red'}).appendTo("#filter");
+                        $('#add').hide();
+                    })
+                }
+            });
+
+
+
+
 
 
 });
